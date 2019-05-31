@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NotifierModule } from 'angular-notifier';
+import { notifierConfigOptions } from './core/config/notification.config';
+import { CoreModule } from './core/core.module';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +14,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NotifierModule.withConfig(notifierConfigOptions),
+    CoreModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

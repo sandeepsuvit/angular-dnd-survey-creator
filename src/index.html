@@ -1,14 +1,113 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>NformUi</title>
-  <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<head>
+    <meta charset="utf-8">
+    <title>NForm</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 </head>
+<style type="text/css">
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    
+    .lds-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        height: 100%;
+    }
+    
+    .lds-ellipsis {
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .lds-ellipsis div {
+        position: absolute;
+        top: 27px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #ccc;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+    
+    .lds-ellipsis div:nth-child(1) {
+        left: 6px;
+        animation: lds-ellipsis1 0.6s infinite;
+    }
+    
+    .lds-ellipsis div:nth-child(2) {
+        left: 6px;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+    
+    .lds-ellipsis div:nth-child(3) {
+        left: 26px;
+        animation: lds-ellipsis2 0.6s infinite;
+    }
+    
+    .lds-ellipsis div:nth-child(4) {
+        left: 45px;
+        animation: lds-ellipsis3 0.6s infinite;
+    }
+    
+    @keyframes lds-ellipsis1 {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes lds-ellipsis3 {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
+    
+    @keyframes lds-ellipsis2 {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(19px, 0);
+        }
+    }
+</style>
+</head>
+
 <body>
-  <app-root></app-root>
+    <app-root>
+        <!-- loading layout replaced by app after startupp -->
+        <div class="lds-container">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </app-root>
+
 </body>
+
 </html>

@@ -1,0 +1,79 @@
+/* -------------------------------------------------------------------------- */
+
+.truncate {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/////
+// Show cursor as pointer on items
+.link {
+    cursor: pointer;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+////
+// No Resize for textareas
+textarea.no-resize {
+    resize: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+.text-thin {
+    font-weight: 300;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-bold-md {
+    font-weight: 500;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+.text-black-80 {
+    color: #ccc;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+.menu-shadow {
+    @include box-shadow(0px 5px 12px 0px rgba(0, 0, 0, .08));
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+// Button dropdown container where there are absolute positioned items
+.dropdown-wrapper {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+}

@@ -1,0 +1,38 @@
+/* Global imports */
+
+@import "./src/assets/styles/imports";
+
+/** Custom styles **/
+
+:host {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #F4F8F9;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar {
+    &__view {
+        width: 25rem;
+        background: #fff;
+    }
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%; // Only for Edge browser
+    overflow: auto; // Only for Edge browser
+    &__view {
+        display: flex;
+        overflow: auto;
+        width: 100%;
+    }
+}

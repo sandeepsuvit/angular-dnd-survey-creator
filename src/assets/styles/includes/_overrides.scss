@@ -1,0 +1,194 @@
+@import "./assets/styles/mixins/commons";
+
+/* -------------------------------------------------------------------------- */
+
+// Global
+* {
+    &:active,
+     :focus {
+        outline: none !important;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+// For using feather icons
+.feather {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    vertical-align: middle;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    // stroke: currentColor;
+    stroke-width: 2;
+    fill: currentColor;
+    vertical-align: middle;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+// Form 
+.form-control {
+    height: auto;
+    &::placeholder {
+        color: #ccc;
+    }
+}
+
+.form-group {
+    label {
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+}
+
+.form-label,
+.form-check-label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+.dropdown-menu {
+    border: 1px solid #ddd;
+    // border-radius: 0;
+    background: #fff;
+    .dropdown-item {
+        &:active {
+            background: #EFF3F5;
+            color: #333;
+        }
+        &.link {
+            &:active {
+                color: #333;
+                background: #EFF3F5;
+            }
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+////
+// Modals
+.modal-content {
+    border: none;
+    border-radius: 0.15rem;
+    background: #fff;
+    .modal-header {
+        padding: 1rem 1.5rem 0;
+        border-bottom: 0 solid #EEF2F5;
+        .modal-title {
+            margin-bottom: 0;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+        .close {
+            margin: 0;
+            background: rgba(0, 0, 0, 0.25);
+            text-shadow: none;
+            padding: 0.15rem 0.5rem;
+            color: #333;
+            border-radius: 50rem;
+            font-weight: 300;
+        }
+    }
+    .modal-body {
+        padding: 1rem 1.5rem;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+// Table
+.table {
+    margin-bottom: 0;
+    thead {
+        th {
+            @include border-top-radius(0.2rem);
+            background-color: #f8f9fa;
+            color: #666;
+            padding: 0.4rem 0.75rem;
+            border-top: none;
+            border-bottom: none;
+            font-weight: 500;
+        }
+    }
+    tbody {
+        td {
+            color: #666;
+            .feather {
+                padding: 0.2rem auto;
+                margin-left: 0.3rem;
+                margin-right: 0.3rem;
+            }
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+// Badge
+.badge {
+    &.align-fix {
+        padding-bottom: 0.3rem;
+    }
+    @each $color,
+    $value in $theme-colors {
+        &.badge-#{$color} {
+            color: $value;
+            background-color: lighten($color: $value, $amount: 35%);
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+////
+// Notifier
+.notifier__notification-button {
+    svg {
+        vertical-align: inherit;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+////
+// NG Select
+.ng-select {
+    &.ng-select-single {
+        .ng-select-container {
+            // height: 38px;
+        }
+    }
+    .ng-clear-wrapper {
+        .ng-clear {
+            // line-height: 2 !important;
+        }
+    }
+    // Show invalid selection
+    &.ng-invalid.ng-touched .ng-select-container {
+        border-color: #dc3545;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px #fde6e8;
+    }
+}
