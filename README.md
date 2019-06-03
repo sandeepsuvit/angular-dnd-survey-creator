@@ -1,6 +1,8 @@
 # Angular 7+ drag and drop survey creator example with ngx-smooth-dnd
 
 ![Alt text](samples/angular-dnd-survey-creator.png?raw=true "Drag and drop survey creator")
+![Alt text](samples/angular-dnd-survey-creator-1.png?raw=true "Drag and drop survey creator 1")
+![Alt text](samples/angular-dnd-survey-creator-2.png?raw=true "Drag and drop survey creator 2")
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
