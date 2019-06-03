@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Toolbar } from 'src/app/core/models/toolbar.model';
 
 @Component({
   selector: 'app-editor',
@@ -64,6 +63,35 @@ export class EditorComponent implements OnInit {
     // Fires during element add
     if (addedIndex !== null) {
       this.itemsDropped.splice(addedIndex, 0, itemToAdd);
+    }
+  }
+
+  /**
+   * Handle remove item event
+   *
+   * @param {number} index
+   * @param {*} item
+   * @memberof EditorComponent
+   */
+  onRemoveItem(index: number, item: any) {
+    if (confirm(`Are you sure you want to remove this item?`)) {
+      this.itemsDropped.splice(index, 1);
+    }
+  }
+
+  /**
+   * Handle duplicate item event
+   *
+   * @param {number} index
+   * @param {*} item
+   * @memberof EditorComponent
+   */
+  onDuplicateItem(index: number, item: any) {
+    if (confirm(`Are you sure you want to duplicate this item?`)) {
+      // Copy the field properties into new object
+      const copiedItem = Object.assign({ ...item });
+      // Duplicate and add the new item after the current item
+      this.itemsDropped.splice(index + 1, 0, copiedItem);
     }
   }
 }

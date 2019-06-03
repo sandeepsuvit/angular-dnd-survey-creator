@@ -3,8 +3,9 @@
         <p class="mb-0 text-black-50 text-bold-md text-uppercase">Control panel</p>
     </div>
     <div class="scrollable-child scrollbars px-3">
-        <smooth-dnd-container [groupName]="'1'" [getChildPayload]="getToolbarPayload" (drop)="onDrop($event)" [dragClass]="'ghost-drag'" [dropClass]="'ghost-drop'" [dropPlaceholder]="placeholderOptions" [dragHandleSelector]="'.column-drag-handle'">
-            <smooth-dnd-draggable *ngFor="let toolbar of itemsDropped">
+        <smooth-dnd-container [groupName]="'1'" [getChildPayload]="getToolbarPayload" (drop)="onDrop($event)" [dragClass]="'ghost-drag'" [dropClass]="'ghost-drop'" [dropPlaceholder]="placeholderOptions" [dragHandleSelector]="'.column-drag-handle'" [attr.data-content-onempty]="itemsDropped.length === 0 ? 'Drop survey elements here' : null">
+
+            <smooth-dnd-draggable *ngFor="let toolbar of itemsDropped; index as idx">
                 <div class="draggable-item">
                     <div class="card">
                         <div class="card-body p-2">
@@ -12,6 +13,18 @@
                                 <span class="column-drag-handle noselect px-2">&#x2630;</span>
                                 <div class="content">
                                     {{toolbar.label}}
+
+                                    <!-- Control bar -->
+                                    <div class="mt-3 controls d-flex justify-content-start align-items-center text-uppercase">
+                                        <ul class="list-inline small mb-0">
+                                            <li class="list-inline-item text-bold-md">
+                                                <a class="text-primary link" (click)="onRemoveItem(idx, toolbar)">Remove item</a>
+                                            </li>
+                                            <li class="list-inline-item text-bold-md">
+                                                <a class="text-primary link" (click)="onDuplicateItem(idx, toolbar)">Duplicate</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

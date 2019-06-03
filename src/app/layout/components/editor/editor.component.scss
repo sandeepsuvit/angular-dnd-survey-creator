@@ -24,6 +24,21 @@
             min-height: 10rem;
         }
     }
+    // Show drop container message
+    smooth-dnd-container {
+        position: relative;
+        &[data-content-onempty]:after {
+            position: absolute;
+            content: attr(data-content-onempty);
+            z-index: 1;
+            display: inline-table;
+            font-size: 1.2rem;
+            width: 97%;
+            text-align: center;
+            color: #ccc;
+            bottom: 10rem;
+        }
+    }
 }
 
 .draggable-item {
@@ -48,6 +63,6 @@
 }
 
 .content {
-    min-height: 5rem;
+    // min-height: 5rem;
     transition: min-height .3s ease-in-out;
 }
