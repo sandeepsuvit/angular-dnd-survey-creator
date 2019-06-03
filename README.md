@@ -1,4 +1,6 @@
-# NformUi
+# Angular 7+ drag and drop survey creator example with ngx-smooth-dnd
+
+![Alt text](samples/angular-dnd-survey-creator.png?raw=true "Drag and drop survey creator")
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
