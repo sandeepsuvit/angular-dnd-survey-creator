@@ -1,0 +1,26 @@
+/* Global imports */
+
+@import "./src/assets/styles/imports";
+@import "~bootstrap/scss/utilities/shadows";
+
+/** Custom styles **/
+
+.ghost-drag {
+    .card {
+        @extend .shadow;
+        border: dashed .15rem #ccc;
+        text-align: center;
+        cursor: move;
+    }
+}
+
+.ghost-drop {
+    @extend .shadow;
+}
+
+.draggable-item {
+    margin: 0.5rem 0;
+    .card {
+        cursor: move;
+    }
+}

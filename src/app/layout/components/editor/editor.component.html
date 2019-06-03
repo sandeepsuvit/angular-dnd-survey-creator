@@ -1,3 +1,23 @@
-<p>
-  editor works!
-</p>
+<div class="animated fadeIn position-relative scrollable-parent">
+    <div class="sticky-top p-3">
+        <p class="mb-0 text-black-50 text-bold-md text-uppercase">Control panel</p>
+    </div>
+    <div class="scrollable-child scrollbars px-3">
+        <smooth-dnd-container [groupName]="'1'" [getChildPayload]="getToolbarPayload" (drop)="onDrop($event)" [dragClass]="'ghost-drag'" [dropClass]="'ghost-drop'" [dropPlaceholder]="placeholderOptions" [dragHandleSelector]="'.column-drag-handle'">
+            <smooth-dnd-draggable *ngFor="let toolbar of itemsDropped">
+                <div class="draggable-item">
+                    <div class="card">
+                        <div class="card-body p-2">
+                            <div class="d-flex justify-content-start align-items-start">
+                                <span class="column-drag-handle noselect px-2">&#x2630;</span>
+                                <div class="content">
+                                    {{toolbar.label}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </smooth-dnd-draggable>
+        </smooth-dnd-container>
+    </div>
+</div>

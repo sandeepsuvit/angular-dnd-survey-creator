@@ -26,6 +26,8 @@ import { NotificationHandlerService } from './services/notification-handler.serv
 import { FileUtilsService } from './services/file-utils.service';
 import { DialogService } from './services/dialog.service';
 import { DummyService } from './services/dummy.service';
+import { ToolbarService } from './services/toolbar.service';
+import { NgxSmoothDnDModule } from 'ngx-smooth-dnd';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { DummyService } from './services/dummy.service';
     TabsModule.forRoot(),
     PaginationModule.forRoot(),
     PopoverModule.forRoot(),
+    NgxSmoothDnDModule,
     NgSelectModule,
     LoadingBarHttpClientModule,
     FormsModule,
@@ -63,6 +66,7 @@ import { DummyService } from './services/dummy.service';
     TabsModule,
     PaginationModule,
     PopoverModule,
+    NgxSmoothDnDModule,
     NgSelectModule,
     LoadingBarHttpClientModule,
     FormsModule,
@@ -81,7 +85,8 @@ import { DummyService } from './services/dummy.service';
     NotificationHandlerService,
     FileUtilsService,
     DialogService,
-    DummyService
+    DummyService,
+    ToolbarService
   ]
 })
 export class CoreModule {

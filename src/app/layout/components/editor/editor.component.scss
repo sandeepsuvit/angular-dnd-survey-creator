@@ -1,0 +1,53 @@
+/* Global imports */
+
+@import "./src/assets/styles/imports";
+@import "~bootstrap/scss/utilities/shadows";
+
+/** Custom styles **/
+
+:host {
+    @include layout-resets();
+}
+
+::ng-deep {
+    .smooth-dnd-container {
+        background: #fff;
+        min-height: calc(100% - 1rem);
+    }
+    .dropping-placeholder {
+        background: #e0f2f7;
+        border: dashed .1rem #6badbd;
+    }
+    // For safari
+    @media not all and (min-resolution:.001dpcm) {
+        .smooth-dnd-container {
+            min-height: 10rem;
+        }
+    }
+}
+
+.draggable-item {
+    padding: .5rem;
+}
+
+.ghost-drag {
+    .card {
+        @extend .shadow;
+    }
+}
+
+.ghost-drop {
+    .card {
+        @extend .shadow;
+    }
+}
+
+.column-drag-handle {
+    cursor: move;
+    color: $grey;
+}
+
+.content {
+    min-height: 5rem;
+    transition: min-height .3s ease-in-out;
+}

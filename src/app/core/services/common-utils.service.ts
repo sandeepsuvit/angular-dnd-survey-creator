@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class CommonUtilsService {
@@ -55,31 +55,5 @@ export class CommonUtilsService {
    */
   removeAllCookies() {
     this.cookieService.deleteAll();
-  }
-
-  private hashCode(str: string) {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      // tslint:disable-next-line:no-bitwise
-      hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    return hash;
-  }
-
-  private intToRGB(i: number) {
-    // tslint:disable-next-line:no-bitwise
-    const c = (i & 0x00FFFFFF)
-      .toString(16)
-      .toUpperCase();
-    return '00000'.substring(0, 6 - c.length) + c;
-  }
-
-  /**
-   * Generate a color based on the color
-   *
-   * @param str String to convert to color
-   */
-  generateColorCode(str: string) {
-    return this.sanitizer.bypassSecurityTrustStyle(`--bg-color: #${this.intToRGB(this.hashCode(str))};`);
   }
 }
