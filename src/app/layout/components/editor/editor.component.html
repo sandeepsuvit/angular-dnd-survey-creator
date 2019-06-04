@@ -1,6 +1,9 @@
 <div class="animated fadeIn position-relative scrollable-parent">
     <div class="sticky-top p-3">
-        <p class="mb-0 text-black-50 text-bold-md text-uppercase">Control panel</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <p class="mb-0 text-black-50 text-bold-md text-uppercase">Control panel</p>
+            <button type="button" class="btn btn-secondary" (click)="onResetEditor()">Clear All</button>
+        </div>
     </div>
     <div class="scrollable-child scrollbars px-3">
         <smooth-dnd-container [groupName]="'1'" [getChildPayload]="getToolbarPayload" (drop)="onDrop($event)" [dragClass]="'ghost-drag'" [dropClass]="'ghost-drop'" [dropPlaceholder]="placeholderOptions" [dragHandleSelector]="'.column-drag-handle'" [attr.data-content-onempty]="itemsDropped.length === 0 ? 'Drop survey elements here' : null">

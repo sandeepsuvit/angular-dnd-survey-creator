@@ -80,6 +80,17 @@ export class EditorComponent implements OnInit {
   }
 
   /**
+   * Clear all items in the array
+   *
+   * @memberof EditorComponent
+   */
+  onResetEditor() {
+    if (confirm(`Are you sure you want to clear the editor?`)) {
+      this.itemsDropped.length = 0;
+    }
+  }
+
+  /**
    * Handle duplicate item event
    *
    * @param {number} index
