@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/19ace98f-4fac-4f91-98fb-498c1fa0cfc7/deploy-status)](https://app.netlify.com/sites/angular-dnd-survey-creator/deploys)
+
 # Angular 7+ drag and drop survey creator example with ngx-smooth-dnd
 
 ### Screenshot 1
